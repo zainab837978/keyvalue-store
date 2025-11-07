@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  keyvalue-store:
+    build: .
+    container_name: keyvalue-store
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data.json:/root/data.json
+    restart: unless-stopped
